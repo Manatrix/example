@@ -1,0 +1,7 @@
+.chat-body.clearfix
+	.message(ng-class="chat_mes.comment.role")
+		.title-row
+			%span.user-name {{chat_mes.comment.comment_created_by}}
+			%span.user-role {{chat_mes.roles[chat_mes.comment.role].name}}
+			%span.user-date {{chat_mes.comment.created_at_format}}
+		.text-row {{chat_mes.comment.text}}

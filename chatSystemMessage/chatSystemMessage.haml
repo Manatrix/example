@@ -1,0 +1,14 @@
+.chat-body.clearfix
+	.message.system-message
+		.title-row
+			%span.user-name {{sys_chat_mes.comment.comment_created_by}}
+			%span.user-role {{sys_chat_mes.roles[sys_chat_mes.comment.role].name}}
+			%span.user-date {{sys_chat_mes.comment.created_at_format}}
+		.text-row
+			Были изменены следующие поля:
+			%ul
+				%li(ng-repeat="item in sys_chat_mes.items")
+					%span(style="font-weight: bold") {{item.name}}:
+					%span(style="font-weight: bold") {{item.from}}
+					%span ->
+					%span(style="font-weight: bold") {{item.to}}

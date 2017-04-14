@@ -1,0 +1,13 @@
+.filter-mult-directive.directive
+	.filter-mult-city-directive.directive
+	%span Город:
+	%select.form-control.selectpicker_dir(multiple="true" title="Ничего не выбрано" ng-model="filter_mult.model.city_ids" ng-options="item.id as item.name for item in filter_mult.cities" ng-change="filter_mult.cityChange()")
+
+	%span Тц:
+	%select.form-control.selectpicker_dir(multiple="true" title="Ничего не выбрано" ng-model="filter_mult.model.building_ids" ng-options="item.id as item.name + ' - ' + item.city_name for item in filter_mult.buildings" ng-change="filter_mult.buildingChange()")
+
+	%span Бренд:
+	%select.form-control.selectpicker_dir(multiple="true" title="Ничего не выбрано" ng-model="filter_mult.model.brand_ids" ng-options="item.id as item.name for item in filter_mult.brands" ng-change="filter_mult.brandChange()")
+
+	%span Объект:
+	%select.form-control.selectpicker_dir(multiple="true" title="Ничего не выбрано" ng-model="filter_mult.model.store_ids" ng-options="item.id as item.brand_name + ' ' + item.code + ' ' + ' ТЦ ' + item.building_name + '-' + item.city_name for item in filter_mult.stores")
